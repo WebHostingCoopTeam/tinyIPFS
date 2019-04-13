@@ -11,3 +11,8 @@ run:
 	  -p 0.0.0.0:8080:8080 \
 	  -p 0.0.0.0:5001:5001 \
 	  ipfs/go-ipfs:latest
+
+clean:
+	docker kill `cat .cid`
+	docker rm `cat .cid`
+	rm .cid
