@@ -3,7 +3,8 @@ run:
 	$(eval ipfs_staging := $(shell cat .ipfs_staging))
 	$(eval ipfs_data := $(shell cat .ipfs_data))
 	docker run -d \
-	  -name ${NAME} \
+	  --name ${NAME} \
+	  --cidfile .cid \
 	  -v ${ipfs_staging}:/export \
 	  -v ${ipfs_data}:/data/ipfs \
 	  -p 0.0.0.0:4001:4001 \
