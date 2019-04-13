@@ -13,6 +13,6 @@ run:
 	  ipfs/go-ipfs:latest
 
 clean:
-	docker kill `cat .cid`
-	docker rm `cat .cid`
-	rm .cid
+	-docker kill `cat .cid`
+	-docker rm `cat .cid`
+	-rm .cid
